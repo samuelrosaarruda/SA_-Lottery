@@ -7,7 +7,11 @@ const geradorDeNumeros = async (req, res) => {
         }
         const numeros = [];
         for (let i = 1; i <= quantidadeNumero; i++) {
-            numeros.push(i)
+let numeroSorteado = Math.floor(Math.random() * 60);
+if(numeroSorteado === 0){
+i-=1
+}
+            numeros.push(numeroSorteado)
         }
         return res.json({ "Os números selecionados são": numeros });
     } catch (error) {
